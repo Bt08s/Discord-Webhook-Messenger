@@ -1,0 +1,3 @@
+dearpygui
+discord-webhook
+torswitch

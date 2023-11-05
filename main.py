@@ -86,10 +86,10 @@ def send():
 
 
 with dpg.window(label="Webhook", tag="Webhook window"):
-    dpg.add_checkbox(label="Use tor proxy (anonymity)", tag="use tor", default_value=True)
-    dpg.add_checkbox(label="Avatar", tag="use avatar", default_value=False)
     dpg.add_input_text(label="Tor proxy", default_value="http(s): socks5://127.0.0.1:9050", readonly=True)
     dpg.add_input_text(label="Avatar url", tag="avatar url")
+    dpg.add_checkbox(label="Use tor proxy", tag="use tor", default_value=True)
+    dpg.add_checkbox(label="Custom avatar", tag="use avatar", default_value=False)
     dpg.add_text()
     dpg.add_input_text(label="Webhook url", tag="webhook url")
     dpg.add_input_text(label="Webhook name", tag="webhook username")

@@ -6,6 +6,10 @@ import threading
 dpg.create_context()
 
 
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+    
+
 def send():
     use_tor = dpg.get_value("use tor")
     use_avatar = dpg.get_value("use avatar")
@@ -116,6 +120,7 @@ with dpg.theme() as global_theme:
         dpg.add_theme_style(dpg.mvStyleVar_FramePadding, 4, 4)
         dpg.add_theme_style(dpg.mvStyleVar_ItemSpacing, 5, 5)
 
+clear()
 dpg.bind_theme(global_theme)
 dpg.create_viewport(title='Discord webhook messenger by Bt08s', width=780, height=370)
 dpg.setup_dearpygui()

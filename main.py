@@ -86,22 +86,37 @@ def send():
 
 
 with dpg.window(label="Webhook", tag="Webhook window"):
-    dpg.add_input_text(label="Tor proxy", default_value="http(s): socks5://127.0.0.1:9050", readonly=True)
-    dpg.add_input_text(label="Avatar url", tag="avatar url")
     dpg.add_checkbox(label="Use tor proxy", tag="use tor", default_value=True)
     dpg.add_checkbox(label="Custom avatar", tag="use avatar", default_value=False)
-    dpg.add_spacing(count=1)
+    dpg.add_spacing(count=3)
+    dpg.add_input_text(label="Tor proxy", default_value="http(s): socks5://127.0.0.1:9050", readonly=True)
+    dpg.add_input_text(label="Avatar url", tag="avatar url")
+    dpg.add_spacing(count=3)
     dpg.add_input_text(label="Webhook url", tag="webhook url")
     dpg.add_input_text(label="Webhook name", tag="webhook username")
     dpg.add_input_text(label="Message", tag="message")
     dpg.add_input_text(label="Message count", tag="message count")
     dpg.add_button(label="Send", width=100, callback=send)
-    dpg.add_spacing(count=1)
+    dpg.add_spacing(count=3)
     dpg.add_text(tag="webhook msg status", color=(0, 128, 0))
 
     with dpg.popup(dpg.last_item(), modal=True, tag="done popup"):
         dpg.add_text("Done")
 
+
+with dpg.theme() as global_theme:
+    with dpg.theme_component(dpg.mvAll):
+        dpg.add_theme_style(dpg.mvStyleVar_WindowRounding, 3)
+        dpg.add_theme_style(dpg.mvStyleVar_FrameRounding, 3)
+        dpg.add_theme_style(dpg.mvStyleVar_GrabRounding, 3)
+        dpg.add_theme_style(dpg.mvStyleVar_TabRounding, 3)
+        dpg.add_theme_style(dpg.mvStyleVar_ChildRounding, 3)
+        dpg.add_theme_style(dpg.mvStyleVar_PopupRounding, 3)
+        dpg.add_theme_style(dpg.mvStyleVar_ScrollbarRounding, 3)
+        dpg.add_theme_style(dpg.mvStyleVar_FramePadding, 4, 4)
+        dpg.add_theme_style(dpg.mvStyleVar_ItemSpacing, 5, 5)
+
+dpg.bind_theme(global_theme)
 dpg.create_viewport(title='Discord webhook messenger by Bt08s', width=780, height=370)
 dpg.setup_dearpygui()
 dpg.show_viewport()

@@ -106,7 +106,7 @@ with dpg.window(label="Webhook", tag="Webhook window"):
     dpg.add_text(tag="webhook msg status", color=(0, 128, 0))
 
     with dpg.popup(dpg.last_item(), modal=True, tag="done popup"):
-        dpg.add_text("Done")
+        dpg.add_text("Sent!")
 
 
 with dpg.theme() as global_theme:

@@ -2,6 +2,7 @@ from discord_webhook import DiscordWebhook
 import dearpygui.dearpygui as dpg
 from torswitch import TorProtocol
 import threading
+import os
 
 dpg.create_context()
 

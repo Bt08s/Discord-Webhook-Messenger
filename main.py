@@ -93,16 +93,16 @@ def send():
 with dpg.window(label="Webhook", tag="Webhook window"):
     dpg.add_checkbox(label="Use tor proxy", tag="use tor", default_value=True)
     dpg.add_checkbox(label="Custom avatar", tag="use avatar", default_value=False)
-    dpg.add_spacing(count=3)
+    dpg.add_spacer(parent=3)
     dpg.add_input_text(label="Tor proxy", default_value="http(s): socks5://127.0.0.1:9050", readonly=True)
     dpg.add_input_text(label="Avatar url", tag="avatar url")
-    dpg.add_spacing(count=3)
+    dpg.add_spacer(parent=3)
     dpg.add_input_text(label="Webhook url", tag="webhook url")
     dpg.add_input_text(label="Webhook name", tag="webhook username")
     dpg.add_input_text(label="Message", tag="message")
     dpg.add_input_text(label="Message count", tag="message count")
     dpg.add_button(label="Send", width=100, callback=send)
-    dpg.add_spacing(count=3)
+    dpg.add_spacer(parent=3)
     dpg.add_text(tag="webhook msg status", color=(0, 128, 0))
 
     with dpg.popup(dpg.last_item(), modal=True, tag="done popup"):
